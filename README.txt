@@ -1,69 +1,102 @@
-# Ultimate Windows Diagnostic Tool™
+# 
+Ultimate Windows Diagnostic Tool
 
-The Ultimate Windows Diagnostic Tool™ is a powerful and versatile application designed to help you analyze and optimize your Windows 11 system. It offers both a command-line interface (CLI) and a graphical user interface (GUI) for your convenience. This tool provides comprehensive system and network diagnostics, allowing you to identify potential issues and export detailed reports.
+[![Python](https://img.shields.io/badge/python-3.8%2B-blue)](https://www.python.org/) [![PyPI](https://img.shields.io/badge/pypi-v1.0.0-green)](#)
 
----
+> **A powerful, modular and user-friendly Windows 11 diagnostic and optimization suite**
 
-## Features
+## 🔍 Overview  
+The **Ultimate Windows Diagnostic Tool™** helps you analyze, optimize, and monitor your Windows 11 system. With both a CLI and a sleek dark‑mode GUI built on PyQt5, you can:
 
-* **System Diagnostics**: Gathers information about your CPU and memory usage.
-* **Network Speed Test**: Performs a reliable speed test to measure download, upload, and ping.
-* **Automatic Scan Saving**: Automatically saves the last 5 scans for easy access to historical data.
-* **Report Exporting**: Export detailed diagnostic reports in HTML, Markdown, or plain text formats.
-* **Command-Line Interface (CLI)**:
-    * Run scans with an option to apply safe optimizations.
-    * View a history of previous scans.
-    * Export reports directly from the command line.
-* **Graphical User Interface (GUI)**:
-    * User-friendly interface built with PyQt5.
-    * "Diagnostics" tab to run scans and view reports.
-    * "History" tab to load and review past scans.
-    * "Live Stats" tab to monitor real-time CPU and memory usage.
-    * Dark theme for improved readability.
-    * Includes a placeholder for future ISLC (Intelligent Standby List Cleaner) integration.
+- 📊 Gather comprehensive system and network diagnostics  
+- 💾 Automatically save and revisit your last 5 scans  
+- 📝 Export detailed reports (HTML, Markdown, or plain text)  
+- 🖥️ Monitor live CPU, memory, and process stats in real time  
 
----
+## 🚀 Features
 
-## Installation
+| Module                | Description                                            |
+|-----------------------|--------------------------------------------------------|
+| **System Diagnostics**| CPU, memory, temperature (future), and hardware info   |
+| **Network Speed Test**| Download, upload, and ping measurements                |
+| **Auto‑Save**         | Retain the last 5 scans in `%APPDATA%/DiagnosisTool`   |
+| **Report Export**     | Generate `report.html`, `report.md`, or `report.txt`   |
+| **CLI Interface**     | `scan`, `scan --fix`, `scan --export`, `history`       |
+| **GUI Interface**     | Dark‑themed PyQt5 app with tabs for Diagnostics, Live Stats, History, and Processes |
 
-To set up the Ultimate Windows Diagnostic Tool™, follow these steps:
+## 📂 Folder Structure
+```
+windows_diagnostic_tool/        # project root
+├── modules/                   # core logic
+│   ├── diagnostics.py        # perform system/net checks
+│   ├── reporting.py          # export reports via Jinja2
+│   ├── autosave.py           # manage scan history
+│   ├── cli.py                # CLI commands (click)
+│   └── utils.py              # helper functions (paths, setup)
+├── ui/                        # GUI code
+│   └── gui.py                # PyQt5 application
+├── scans/                     # auto-saved JSON scans
+├── main.py                    # decides CLI vs GUI launch
+└── requirements.txt           # Python dependencies
+```
 
-1.  **Clone the repository** (if applicable, though not provided in the snippets).
-2.  **Install dependencies**:
-    ```bash
-    pip install -r requirements.txt [cite: 1]
-    ```
-    This will install necessary packages like `psutil`[cite: 2], `wmi`[cite: 2], `pywin32`[cite: 2], `speedtest-cli`[cite: 2], `click`[cite: 2], `jinja2`[cite: 2], `PyYAML`[cite: 2], and `PyQt5`[cite: 2].
+## 🛠️ Installation
 
----
+1. Clone the repo (or download source):  
+   ```bash
+   git clone https://github.com/yourusername/ultimate-windows-diagnostic-tool.git
+   cd ultimate-windows-diagnostic-tool
+   ```
+2. Install dependencies:  
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-## Usage
+## 💻 Usage
 
-### Command-Line Interface (CLI)
-
-To use the CLI, navigate to the project's root directory and run `main.py` with arguments.
-
-* **Run a diagnostic scan**:
-    ```bash
-    python main.py scan
-    ```
-* **Run a diagnostic scan and apply safe optimizations**:
-    ```bash
-    python main.py scan --fix
-    ```
-* **Export a report after scanning (e.g., to HTML)**:
-    ```bash
-    python main.py scan --export html
-    ```
-    You can also choose `md`, `txt`, or `all` for the export format.
-* **View scan history**:
-    ```bash
-    python main.py history
-    ```
+### Command‑Line Interface (CLI)
+- **Run a scan**:  
+  ```bash
+  python main.py scan
+  ```
+- **Run a scan & apply safe optimizations**:  
+  ```bash
+  python main.py scan --fix
+  ```
+- **Export report in HTML**:  
+  ```bash
+  python main.py scan --export html
+  ```  
+  > Formats: `html`, `md`, `txt`, or `all`
+- **View scan history**:  
+  ```bash
+  python main.py history
+  ```
 
 ### Graphical User Interface (GUI)
-
-To launch the GUI, simply run `main.py` without any command-line args:
-
+Launch without arguments to open the dark‑mode GUI:  
 ```bash
 python main.py
+```
+
+**GUI Tabs:**
+- **Diagnostics**: Run full system and network scans  
+- **Live Stats**: Real‑time CPU & memory usage updates  
+- **History**: Browse the last 5 saved scans with color‑coded metrics  
+- **Processes**: Top 20 processes by CPU usage (color‑coded)  
+
+## 📋 Contributing
+
+1. Fork the repository  
+2. Create a feature branch (`git checkout -b feature/awesome`)  
+3. Commit your changes (`git commit -m "Add awesome feature"`)  
+4. Push to branch (`git push origin feature/awesome`)  
+5. Open a Pull Request  
+
+## 📄 License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+---
+
+*Built with ❤️ and PyQt5*
