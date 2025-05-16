@@ -1,0 +1,9 @@
+psutil
+wmi
+pywin32
+speedtest-cli
+click
+jinja2
+PyYAML
+PyQt5
+psutil
