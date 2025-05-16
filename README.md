@@ -20,10 +20,10 @@ Module                | Description
 ----------------------|-------------------------------------------------------
 System Diagnostics    | CPU, memory, temperature (future), and hardware info
 Network Speed Test    | Download, upload, and ping measurements
-Auto‑Save             | Retain the last 5 scans in %APPDATA%/DiagnosisTool
+Auto‑Save             | Last 5 scans saved in %APPDATA%/DiagnosisTool
 Report Export         | Generate report.html, report.md, or report.txt
 CLI Interface         | scan, scan --fix, scan --export, history
-GUI Interface         | Dark‑themed PyQt5 app with tabs for Diagnostics, Live Stats, History, and Processes
+GUI Interface         | It's a GUI what do you want from me?
 
 🛠️ INSTALLATION
 ---------------
